@@ -46,7 +46,6 @@ func TestSimple(t *testing.T) {
 	assert(json.decode("null") == nil)
 
 	local status, err = pcall(function() json.decode() end)
-
 	assert(err == "<string>:38: bad argument #1 to decode", err)
 	local status, err = pcall(function() json.decode(1,2) end)
 	assert(err == "<string>:40: bad argument #1 to decode", err)
