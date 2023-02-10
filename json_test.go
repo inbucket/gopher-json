@@ -75,7 +75,7 @@ func TestSimple(t *testing.T) {
 	s := lua.NewState()
 	defer s.Close()
 
-	Preload(s)
+	s.PreloadModule("json", Loader)
 	if err := s.DoString(str); err != nil {
 		t.Error(err)
 	}
